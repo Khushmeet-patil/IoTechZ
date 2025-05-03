@@ -110,9 +110,9 @@ const PricingPage = () => {
               <tbody>
                 <tr className="border-t border-gray-200">
                   <td className="py-4 px-8 text-gray-900 font-medium">Price</td>
-                  <td className="py-4 px-8 text-center text-gray-700">$499/month</td>
-                  <td className="py-4 px-8 text-center text-primary-600 font-semibold">$999/month</td>
-                  <td className="py-4 px-8 text-center text-gray-700">$1,999/month</td>
+                  <td className="py-4 px-8 text-center text-gray-700">₹29,999/month</td>
+                  <td className="py-4 px-8 text-center text-primary-600 font-semibold">₹59,999/month</td>
+                  <td className="py-4 px-8 text-center text-gray-700">₹1,19,999/month</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="py-4 px-8 text-gray-900 font-medium">Number of Pages</td>

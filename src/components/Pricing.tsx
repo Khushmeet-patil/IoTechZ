@@ -5,7 +5,7 @@ const Pricing = () => {
   const plans = [
     {
       title: 'Basic',
-      price: '$499',
+      price: '₹29,999',
       period: 'month',
       description: 'Perfect for small businesses just getting started',
       features: [
@@ -19,7 +19,7 @@ const Pricing = () => {
     },
     {
       title: 'Professional',
-      price: '$999',
+      price: '₹59,999',
       period: 'month',
       description: 'Ideal for growing businesses with specific needs',
       features: [
@@ -35,7 +35,7 @@ const Pricing = () => {
     },
     {
       title: 'Enterprise',
-      price: '$1,999',
+      price: '₹1,19,999',
       period: 'month',
       description: 'Advanced solutions for large organizations',
       features: [
