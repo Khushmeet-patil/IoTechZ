@@ -75,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {['Home', 'About Us', 'Services', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to={`/${item === 'About Us' ? 'about' : item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ChevronRight size={16} className="mr-1" />
                     {item}
                   </Link>

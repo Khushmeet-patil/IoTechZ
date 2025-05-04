@@ -8,6 +8,7 @@ const navLinks = [
   { path: '/about', label: 'About' },
   { path: '/services', label: 'Services' },
   { path: '/pricing', label: 'Pricing' },
+  { path: '/faq', label: 'FAQ' },
   { path: '/contact', label: 'Contact' }
 ];
 
@@ -85,14 +86,6 @@ const Navbar = () => {
               )}
             </Link>
           ))}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary"
-            onClick={() => navigate('/contact')}
-          >
-            Get Started
-          </motion.button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -131,13 +124,6 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary w-full"
-            onClick={() => navigate('/contact')}
-          >
-            Get Started
-          </motion.button>
         </div>
       </motion.div>
     </motion.header>

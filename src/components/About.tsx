@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="py-24">
       <div className="container-custom">
@@ -65,6 +68,7 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary mt-6"
+              onClick={() => navigate('/about')}
             >
               Learn More
             </motion.button>
