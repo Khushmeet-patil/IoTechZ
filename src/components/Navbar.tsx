@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -12,6 +12,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -88,6 +89,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary"
+            onClick={() => navigate('/contact')}
           >
             Get Started
           </motion.button>
@@ -132,6 +134,7 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             className="btn-primary w-full"
+            onClick={() => navigate('/contact')}
           >
             Get Started
           </motion.button>
