@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 interface HeroProps {
@@ -13,81 +14,58 @@ interface HeroProps {
 const Hero = ({
   title,
   subtitle,
-  ctaText = 'Get Started',
-  ctaLink = '#',
+  ctaText,
+  ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
-  backgroundImage = 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  backgroundImage
 }: HeroProps) => {
-  // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-  };
-
   return (
-    <section className="relative h-screen flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
-        <img
-          src={backgroundImage}
-          alt="Hero Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="container-custom relative z-20 text-white">
+    <section
+      className="relative min-h-[90vh] flex items-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="container-custom relative z-10">
         <motion.div
-          className="max-w-3xl"
-          variants={container}
-          initial="hidden"
-          animate="show"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto text-center text-white"
         >
-          <motion.h1
-            variants={item}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-display mb-6"
-          >
-            {title}
-          </motion.h1>
-          <motion.p
-            variants={item}
-            className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl"
-          >
-            {subtitle}
-          </motion.p>
-          <motion.div variants={item} className="flex flex-wrap gap-4">
-            <motion.a
-              href={ctaLink}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary"
-            >
-              {ctaText}
-            </motion.a>
-            {secondaryCtaText && (
-              <motion.a
-                href={secondaryCtaLink}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary"
-              >
-                {secondaryCtaText}
-              </motion.a>
-            )}
-          </motion.div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{title}</h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-8">{subtitle}</p>
+          
+          {(ctaText || secondaryCtaText) && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {ctaText && ctaLink && (
+                <Link to={ctaLink}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                  >
+                    {ctaText}
+                  </motion.button>
+                </Link>
+              )}
+              
+              {secondaryCtaText && secondaryCtaLink && (
+                <Link to={secondaryCtaLink}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                  >
+                    {secondaryCtaText}
+                  </motion.button>
+                </Link>
+              )}
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
