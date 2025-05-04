@@ -25,6 +25,7 @@ const HomePage = () => {
         ctaLink="/contact"
         secondaryCtaText="Our Services"
         secondaryCtaLink="/services"
+        backgroundImage="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       <Features />
       <About />

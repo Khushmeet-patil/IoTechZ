@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { Facebook, Twitter, Instagram, Linkedin, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
+  const getItemPath = (item: string) => {
+    if (item === 'Home') return '/';
+    if (item === 'About Us') return '/about';
+    return `/${item.toLowerCase().replace(' ', '-')}`;
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container-custom">
@@ -75,7 +81,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {['Home', 'About Us', 'Services', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={`/${item === 'About Us' ? 'about' : item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to={getItemPath(item)} className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ChevronRight size={16} className="mr-1" />
                     {item}
                   </Link>
