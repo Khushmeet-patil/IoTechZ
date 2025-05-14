@@ -1,21 +1,28 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { Send, Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
+  // We no longer need to initialize EmailJS in a useEffect
+  // The latest version uses a different approach with the publicKey option in sendForm/send
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -27,46 +34,114 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Mock API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+
+    // There are two ways to use EmailJS:
+    // 1. Using sendForm (which uses the form reference directly)
+    // 2. Using send (which uses a template parameters object)
+
+    // We'll use the send method with template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      reply_to: formData.email, // Set reply-to to the user's email
+      subject: formData.subject,
+      message: formData.message,
+      to_email: "khushmeetpatil@gmail.com", // The recipient email
+    };
+
+    // IMPORTANT: Replace these with your actual EmailJS credentials
+    emailjs
+      .send(
+        "service_1z6732q", // Replace with your actual EmailJS service ID
+        "template_37rb2e8", // Replace with your actual EmailJS template ID
+        templateParams,
+        {
+          publicKey: "mOVGCzWhlznGIs7Re", // Replace with your actual EmailJS public key
+        }
+      )
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error("Email sending failed:", error);
+
+        // Log more detailed error information for debugging
+        if (error.status) {
+          console.error(`Status: ${error.status}, Message: ${error.text}`);
+
+          // Check for specific error types
+          if (error.text.includes("Public Key is invalid")) {
+            console.error(
+              "IMPORTANT: You need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key"
+            );
+            console.error(
+              "Get your public key from: https://dashboard.emailjs.com/admin/account"
+            );
+          }
+
+          if (error.text.includes("service_id")) {
+            console.error(
+              "IMPORTANT: You need to replace 'YOUR_SERVICE_ID' with your actual EmailJS service ID"
+            );
+            console.error(
+              "Get your service ID from: https://dashboard.emailjs.com/admin"
+            );
+          }
+
+          if (error.text.includes("template_id")) {
+            console.error(
+              "IMPORTANT: You need to replace 'YOUR_TEMPLATE_ID' with your actual EmailJS template ID"
+            );
+            console.error(
+              "Get your template ID from: https://dashboard.emailjs.com/admin/templates"
+            );
+          }
+        }
+
+        setIsSubmitting(false);
+        setSubmitError(true);
+
+        // Reset error message after 5 seconds
+        setTimeout(() => {
+          setSubmitError(false);
+        }, 5000);
       });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
   };
 
   const contactInfo = [
     {
       icon: <Mail size={24} />,
-      title: 'Email Us',
-      details: 'info@agency.com',
-      action: 'Email us',
-      link: 'mailto:info@agency.com',
+      title: "Email Us",
+      details: "www.iotechz.com",
+      action: "Email us",
+      link: "mailto: khushmeetpatil@gmail.com",
     },
     {
       icon: <MapPin size={24} />,
-      title: 'Visit Us',
-      details: '123 Design Street, San Francisco, CA 94103',
-      action: 'Get directions',
-      link: 'https://maps.google.com',
+      title: "Visit Us",
+      details:
+        "Plot No. 1801/1, G.I.D.C. , Vithal UdhyogNagar-388121, Anand(Guj)",
+      action: "Get directions",
+      link: "https://maps.app.goo.gl/NWHRAS69ViqLqfBo7",
     },
     {
       icon: <Phone size={24} />,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      action: 'Call now',
-      link: 'tel:+15551234567',
+      title: "Call Us",
+      details: "+91 7990358824",
+      action: "Call now",
+      link: "tel:+91 7990358824",
     },
   ];
 
@@ -82,7 +157,8 @@ const Contact = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-gray-600 text-lg">
-            Have a project in mind or want to learn more about our services? We'd love to hear from you!
+            Have a project in mind or want to learn more about our services?
+            We'd love to hear from you!
           </p>
         </motion.div>
 
@@ -122,15 +198,18 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mt-16 bg-white p-8 md:p-12 rounded-xl shadow-lg"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center">Send Us a Message</h3>
-          
+          <h3 className="text-2xl font-bold mb-6 text-center">
+            Send Us a Message
+          </h3>
+
           {submitSuccess && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg text-center"
             >
-              Thank you for your message! We'll get back to you soon.
+              Thank you for your message! Your email has been sent successfully
+              to our team. We'll get back to you soon.
             </motion.div>
           )}
 
@@ -140,11 +219,13 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg text-center"
             >
-              There was an error sending your message. Please try again.
+              There was an error sending your email. The site administrator
+              needs to properly configure EmailJS. Please contact us directly at
+              khushmeetpatil@gmail.com instead.
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="name" className="block text-gray-700 mb-2">
@@ -212,9 +293,25 @@ const Contact = () => {
             >
               {isSubmitting ? (
                 <span className="inline-flex items-center">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                   Sending...
                 </span>
@@ -235,7 +332,13 @@ const Contact = () => {
 export default Contact;
 
 // Helper component for the arrow icon
-const ChevronRight = ({ size, className }: { size: number; className?: string }) => (
+const ChevronRight = ({
+  size,
+  className,
+}: {
+  size: number;
+  className?: string;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}

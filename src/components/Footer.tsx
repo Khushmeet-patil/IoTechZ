@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -23,43 +23,43 @@ const Footer = () => {
           >
             <Link to="/" className="inline-block">
               <h2 className="text-2xl font-bold font-display">
-                Agency<span className="text-accent-500">.</span>
+                IoTechZ<span className="text-accent-500">.</span>
               </h2>
             </Link>
             <p className="text-gray-400 text-sm">
-              Create amazing digital experiences that stand out with our expert team of designers and developers.
+              Bridging the gap between software and hardware with innovative IoT solutions and cutting-edge technology.
             </p>
             <div className="flex space-x-4">
-              <motion.a 
-                href="https://facebook.com" 
-                target="_blank" 
+              <motion.a
+                href="https://facebook.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"
               >
                 <Facebook size={18} />
               </motion.a>
-              <motion.a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <motion.a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"
               >
                 <Twitter size={18} />
               </motion.a>
-              <motion.a 
-                href="https://instagram.com" 
-                target="_blank" 
+              <motion.a
+                href="https://instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"
               >
                 <Instagram size={18} />
               </motion.a>
-              <motion.a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <motion.a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"
@@ -70,7 +70,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -91,7 +91,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Services */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -100,7 +100,7 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
-              {['Digital Marketing', 'UI/UX Design', 'Web Development', 'Branding', 'SEO'].map((item) => (
+              {['Digital Marketing', 'UI/UX Design', 'Web Development', 'Branding', 'IoT Solutions', 'Automation'].map((item) => (
                 <li key={item}>
                   <Link to="/services" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ChevronRight size={16} className="mr-1" />
@@ -112,7 +112,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Contact */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -122,17 +122,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <p>123 Design Street</p>
-                <p>San Francisco, CA 94103</p>
+                <p>Plot No. 1801/1, G.I.D.C.</p>
+                <p>Vithal UdhyogNagar-388121, Anand(Guj)</p>
               </li>
-              <li>info@agency.com</li>
+              <li>khushmeetpatil@gmail.com</li>
               <li>+91 7990358824</li>
             </ul>
           </motion.div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Agency. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} IoTechZ. All rights reserved.</p>
         </div>
       </div>
     </footer>

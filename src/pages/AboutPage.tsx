@@ -16,13 +16,13 @@ const AboutPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Hero 
+      <Hero
         title="About Our Agency"
         subtitle="We're passionate about creating exceptional digital experiences that help businesses thrive in today's competitive landscape."
         backgroundImage="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       <About />
-      
+
       <section className="py-24 bg-gray-50">
         <div className="container-custom">
           <motion.div
@@ -34,23 +34,23 @@ const AboutPage = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
             <p className="text-gray-600 text-lg">
-              Founded in 2024, IoTechZ is on a mission to bridge the gap between software and hardware innovation. We're just getting started, but our vision is clear.
+              Founded in 2025, IoTechZ is on a mission to bridge the gap between software and hardware innovation. We're just getting started, but our vision is clear.
             </p>
           </motion.div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="relative border-l-4 border-primary-500 pl-8 pb-8">
               <div className="absolute w-4 h-4 bg-primary-500 rounded-full -left-2 top-0"></div>
-              <h3 className="text-xl font-bold mb-2">2024: Foundation</h3>
+              <h3 className="text-xl font-bold mb-2">2025: Foundation</h3>
               <p className="text-gray-600">IoTechZ was founded with a vision to create innovative technology solutions that combine software expertise with hardware capabilities.</p>
             </div>
-            
+
             <div className="relative border-l-4 border-primary-500 pl-8 pb-8">
               <div className="absolute w-4 h-4 bg-primary-500 rounded-full -left-2 top-0"></div>
               <h3 className="text-xl font-bold mb-2">Today: Building & Planning</h3>
               <p className="text-gray-600">We're assembling our team, developing our service offerings, and preparing to take on our first clients with enthusiasm and dedication.</p>
             </div>
-            
+
             <div className="relative pl-8">
               <div className="absolute w-4 h-4 bg-primary-500 rounded-full -left-2 top-0"></div>
               <h3 className="text-xl font-bold mb-2">Tomorrow: Growing & Innovating</h3>
@@ -74,23 +74,23 @@ const AboutPage = () => {
               Meet the passionate founders who are bringing IoTechZ's vision to life. We're a small but growing team of experts committed to innovation.
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 name: 'Khushmeet Patil',
-                role: 'App Developer',
+                role: 'Founder',
                 image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
               },
               {
                 name: 'Keya Sheth',
-                role: 'Ui/UX Web Designer',
-                image: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                role: 'CMO',
+                image: '/images/keya_cmo.jpg',
               },
               {
                 name: 'Ved Patil',
-                role: 'Full Stack Developer',
-                image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                role: 'CTO',
+                image: '/images/ved_cto.jpg',
               },
             ].map((member, index) => (
               <motion.div
@@ -102,29 +102,29 @@ const AboutPage = () => {
                 className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow"
               >
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
+                  <img
+                    src={member.image}
+                    alt={member.name}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                     <div className="flex space-x-4">
-                      <motion.a 
-                        href="#" 
+                      <motion.a
+                        href="#"
                         whileHover={{ scale: 1.2 }}
                         className="text-white"
                       >
                         <Facebook size={18} />
                       </motion.a>
-                      <motion.a 
-                        href="#" 
+                      <motion.a
+                        href="#"
                         whileHover={{ scale: 1.2 }}
                         className="text-white"
                       >
                         <Twitter size={18} />
                       </motion.a>
-                      <motion.a 
-                        href="#" 
+                      <motion.a
+                        href="#"
                         whileHover={{ scale: 1.2 }}
                         className="text-white"
                       >

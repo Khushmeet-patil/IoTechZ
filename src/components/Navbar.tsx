@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -7,13 +7,13 @@ const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/services', label: 'Services' },
-  { path: '/pricing', label: 'Pricing' },
+  { path: '/projects', label: 'Projects' },
+  // { path: '/pricing', label: 'Pricing' }, // Temporarily removed
   { path: '/faq', label: 'FAQ' },
   { path: '/contact', label: 'Contact' }
 ];
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -104,7 +104,7 @@ const Navbar = () => {
           isOpen ? 'block' : 'hidden'
         }`}
         initial={{ height: 0, opacity: 0 }}
-        animate={{ 
+        animate={{
           height: isOpen ? 'auto' : 0,
           opacity: isOpen ? 1 : 0
         }}

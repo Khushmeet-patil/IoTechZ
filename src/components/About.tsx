@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const navigate = useNavigate();
-  
+
   return (
     <section className="py-24">
       <div className="container-custom">
@@ -43,19 +43,19 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6 pt-4">
               <div>
-                <h3 className="text-5xl font-bold text-primary-600">3+</h3>
+                <h3 className="text-5xl font-bold text-primary-600">0</h3>
                 <p className="text-gray-600 mt-2">Planned Projects</p>
               </div>
               <div>
-                <h3 className="text-5xl font-bold text-primary-600">5+</h3>
+                <h3 className="text-5xl font-bold text-primary-600">0</h3>
                 <p className="text-gray-600 mt-2">IoT Components</p>
               </div>
               <div>
-                <h3 className="text-5xl font-bold text-primary-600">3+</h3>
+                <h3 className="text-5xl font-bold text-primary-600">0</h3>
                 <p className="text-gray-600 mt-2">Team Members</p>
               </div>
               <div>
-                <h3 className="text-5xl font-bold text-primary-600">2+</h3>
+                <h3 className="text-5xl font-bold text-primary-600">0</h3>
                 <p className="text-gray-600 mt-2">Service Areas</p>
               </div>
             </div>

@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Khushmeet Patil',
     role: 'Founder, IoTechZ',
     image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     quote: 'Our vision is to create innovative solutions that bridge the gap between software and hardware, making technology more accessible and useful for businesses of all sizes.',
@@ -13,17 +13,17 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'Michael Chen',
-    role: 'Technical Lead, IoTechZ',
-    image: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    name: 'Ved Patil',
+    role: 'CTO, IoTechZ',
+    image: '/images/ved_cto.jpg',
     quote: 'We\'re building IoTechZ to help businesses leverage cutting-edge technology without the complexity. Our approach combines technical expertise with practical solutions.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Emma Wilson',
-    role: 'Design Director, IoTechZ',
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    name: 'Keya Sheth',
+    role: 'CMO, IoTechZ',
+    image: '/images/keya_cmo.jpg',
     quote: 'Great technology deserves great design. At IoTechZ, we\'re committed to creating products and services that are not just powerful, but also intuitive and enjoyable to use.',
     rating: 5,
   },
@@ -47,7 +47,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (!autoplay) return;
-    
+
     const interval = setInterval(() => {
       nextTestimonial();
     }, 5000);
@@ -91,7 +91,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div 
+        <div
           className="relative max-w-4xl mx-auto px-8"
           onMouseEnter={() => setAutoplay(false)}
           onMouseLeave={() => setAutoplay(true)}

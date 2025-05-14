@@ -26,7 +26,7 @@ const CTA = () => {
                 Get Started Today
               </motion.a>
               <motion.a
-                href="/portfolio"
+                href="/projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent text-white border border-white hover:bg-white/10 px-6 py-3 rounded-full font-medium"
@@ -35,7 +35,7 @@ const CTA = () => {
               </motion.a>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -53,11 +53,11 @@ const CTA = () => {
                 <p className="text-primary-100">Planned Prototypes</p>
               </div>
               <div className="text-center space-y-2">
-                <h3 className="text-4xl font-bold">24/7</h3>
-                <p className="text-primary-100">Support Promise</p>
+                <h3 className="text-4xl font-bold">100%</h3>
+                <p className="text-primary-100">Innovation Focus</p>
               </div>
               <div className="text-center space-y-2">
-                <h3 className="text-4xl font-bold">2024</h3>
+                <h3 className="text-4xl font-bold">2025</h3>
                 <p className="text-primary-100">Founded</p>
               </div>
             </div>

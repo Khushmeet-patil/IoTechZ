@@ -17,13 +17,13 @@ const ServicesPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Hero 
+      <Hero
         title="Our Services"
         subtitle="Comprehensive technology solutions spanning software development, IoT hardware, and advanced AI integration."
         backgroundImage="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       <Features />
-      
+
       <section className="py-24 bg-gray-50">
         <div className="container-custom">
           <motion.div
@@ -38,11 +38,65 @@ const ServicesPage = () => {
               We provide high-quality IoT components and expert guidance for your connected device projects.
             </p>
           </motion.div>
-          
-          {/* Content for IoT Hardware section */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="IoT Hardware Solutions"
+                className="rounded-lg shadow-xl w-full"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold">Connected Device Ecosystem</h3>
+              <p className="text-gray-600">
+                Our IoT solutions enable seamless connectivity between devices, creating smart environments that enhance efficiency and user experience.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Custom Hardware Development</h3>
+                    <p className="text-gray-600">Designing and building specialized IoT devices for your specific needs.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Sensor Integration</h3>
+                    <p className="text-gray-600">Incorporating various sensors to collect real-time data from the physical world.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Wireless Connectivity</h3>
+                    <p className="text-gray-600">Implementing reliable wireless communication protocols for your IoT ecosystem.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
-      
+
       <section className="py-24">
         <div className="container-custom">
           <motion.div
@@ -57,11 +111,11 @@ const ServicesPage = () => {
               Discover our latest innovations and proprietary products developed by our research team.
             </p>
           </motion.div>
-          
+
           {/* Content for R&D section */}
         </div>
       </section>
-      
+
       <section className="py-24">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -71,8 +125,8 @@ const ServicesPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <img 
-                src="https://images.pexels.com/photos/3184337/pexels-photo-3184337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              <img
+                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="UI/UX Design"
                 className="rounded-lg shadow-xl w-full"
               />
@@ -133,7 +187,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="py-24 bg-gray-50">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -197,8 +251,8 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <img 
-                src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              <img
+                src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Web Development"
                 className="rounded-lg shadow-xl w-full"
               />
@@ -206,7 +260,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="py-24">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -216,8 +270,8 @@ const ServicesPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <img 
-                src="https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              <img
+                src="https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Digital Marketing"
                 className="rounded-lg shadow-xl w-full"
               />
@@ -237,15 +291,7 @@ const ServicesPage = () => {
                 Our digital marketing strategies are data-driven and results-focused, helping you connect with your audience and achieve your business goals.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="bg-primary-100 p-2 rounded-full mr-4">
-                    <Check size={20} className="text-primary-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Search Engine Optimization (SEO)</h3>
-                    <p className="text-gray-600">Improving your visibility in search engine results.</p>
-                  </div>
-                </div>
+
                 <div className="flex items-start">
                   <div className="bg-primary-100 p-2 rounded-full mr-4">
                     <Check size={20} className="text-primary-600" />
@@ -278,7 +324,71 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      
+
+      <section className="py-24 bg-gray-50">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="space-y-6 order-2 lg:order-1"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold">Automation of Physical Workings</h2>
+              <p className="text-gray-600 text-lg">
+                Streamline and automate physical processes to increase efficiency and reduce manual intervention.
+              </p>
+              <p className="text-gray-600">
+                Our automation solutions combine hardware and software to create systems that optimize workflows, reduce errors, and save time and resources.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Process Automation</h3>
+                    <p className="text-gray-600">Identifying and automating repetitive physical tasks in your workflow.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Robotic Systems</h3>
+                    <p className="text-gray-600">Implementing robotic solutions for complex physical operations.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Monitoring & Control</h3>
+                    <p className="text-gray-600">Creating systems to monitor and control automated processes remotely.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <img
+                src="https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Automation Solutions"
+                className="rounded-lg shadow-xl w-full"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
       <CTA />
     </motion.div>

@@ -1,4 +1,4 @@
-import { Layout, PenTool, Code, TrendingUp, Cpu, Brain } from 'lucide-react';
+import { Layout, PenTool, Code, TrendingUp, Cpu, Brain, Cog } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FeatureCard from './FeatureCard';
 
@@ -23,6 +23,11 @@ const Features = () => {
       icon: <Brain size={28} />,
       title: 'AI & ML Integration',
       description: 'Leverage the power of artificial intelligence and machine learning to create smarter products and services.',
+    },
+    {
+      icon: <Cog size={28} />,
+      title: 'Automation of Physical Workings',
+      description: 'Streamline and automate physical processes and workflows to increase efficiency and reduce manual intervention.',
     },
   ];
 
@@ -49,6 +54,7 @@ const Features = () => {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              image={feature.image}
               delay={index * 0.1}
             />
           ))}

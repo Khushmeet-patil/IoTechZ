@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -13,25 +12,24 @@ import FAQPage from './pages/FAQPage';
 
 function App() {
   const location = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="services" element={<ServicesPage />} />
-          <Route path="projects" element={<ProjectsPage />} />
-          <Route path="pricing" element={<PricingPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="faq" element={<FAQPage />} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <Routes location={location} key={location.pathname}>
+      <Route path="" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        {/* Pricing route temporarily disabled */}
+        {/* <Route path="pricing" element={<PricingPage />} /> */}
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="faq" element={<FAQPage />} />
+      </Route>
+    </Routes>
   );
 }
 
