@@ -7,7 +7,7 @@ const testimonials = [
     id: 1,
     name: 'Khushmeet Patil',
     role: 'Founder, IoTechZ',
-    image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/images/founder.jpg',
     quote: 'Our vision is to create innovative solutions that bridge the gap between software and hardware, making technology more accessible and useful for businesses of all sizes.',
     rating: 5,
   },

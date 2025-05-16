@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import CTA from '../components/CTA';
 
@@ -39,12 +40,12 @@ const ProjectsPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Hero 
+      <Hero
         title="Our Projects"
         subtitle="Explore our portfolio of innovative solutions across web development, IoT, and AI integration."
         backgroundImage="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
-      
+
       <section className="py-24">
         <div className="container-custom">
           <motion.div
@@ -59,7 +60,7 @@ const ProjectsPage = () => {
               Discover how we've helped businesses transform their operations and customer experiences.
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <motion.div
@@ -71,8 +72,8 @@ const ProjectsPage = () => {
                 className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="h-64 overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -83,17 +84,20 @@ const ProjectsPage = () => {
                   </span>
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.description}</p>
-                  <button className="text-primary-600 font-medium flex items-center hover:text-primary-700">
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="text-primary-600 font-medium flex items-center hover:text-primary-700"
+                  >
                     View Details
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,13 +105,13 @@ const ProjectsPage = () => {
             viewport={{ once: true }}
             className="mt-16 text-center"
           >
-            <button className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+            <Link to="/all-projects" className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors inline-block">
               View All Projects
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>
-      
+
       <section className="py-24 bg-gray-50">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -122,7 +126,7 @@ const ProjectsPage = () => {
               <p className="text-gray-600 text-lg">
                 We follow a structured approach to ensure every project is delivered on time and exceeds expectations.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-primary-100 rounded-full p-3 mr-4">
@@ -133,7 +137,7 @@ const ProjectsPage = () => {
                     <p className="text-gray-600">We start by understanding your business goals and technical requirements.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-primary-100 rounded-full p-3 mr-4">
                     <span className="text-primary-600 font-bold">2</span>
@@ -143,7 +147,7 @@ const ProjectsPage = () => {
                     <p className="text-gray-600">We create wireframes and prototypes to visualize the solution before development.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-primary-100 rounded-full p-3 mr-4">
                     <span className="text-primary-600 font-bold">3</span>
@@ -153,7 +157,7 @@ const ProjectsPage = () => {
                     <p className="text-gray-600">Our engineers build the solution with rigorous testing at every stage.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-primary-100 rounded-full p-3 mr-4">
                     <span className="text-primary-600 font-bold">4</span>
@@ -165,15 +169,15 @@ const ProjectsPage = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <img 
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              <img
+                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Development Process"
                 className="rounded-lg shadow-xl w-full"
               />
@@ -181,7 +185,7 @@ const ProjectsPage = () => {
           </div>
         </div>
       </section>
-      
+
       <CTA />
     </motion.div>
   );

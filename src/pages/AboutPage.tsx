@@ -80,7 +80,7 @@ const AboutPage = () => {
               {
                 name: 'Khushmeet Patil',
                 role: 'Founder',
-                image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                image: '/images/founder.jpg',
               },
               {
                 name: 'Keya Sheth',
@@ -92,6 +92,11 @@ const AboutPage = () => {
                 role: 'CTO',
                 image: '/images/ved_cto.jpg',
               },
+              {
+                name: 'Parth Panchal',
+                role: 'Full Stack Developer',
+                image: '/images/parth_full_stack.jpg'
+              }
             ].map((member, index) => (
               <motion.div
                 key={index}
