@@ -35,7 +35,7 @@ const About = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold">About IoTechZ</h2>
             <p className="text-gray-600 text-lg">
-              We're a team of engineers, designers, and technology enthusiasts dedicated to creating innovative digital and IoT solutions that transform businesses.
+              We're dedicated to creating innovative digital and IoT solutions that transform businesses through cutting-edge technology.
             </p>
             <p className="text-gray-600">
               Founded with a vision to bridge the gap between software and hardware, IoTechZ offers comprehensive services from web and app development to custom IoT product creation and hardware distribution.
@@ -52,7 +52,7 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-5xl font-bold text-primary-600">0</h3>
-                <p className="text-gray-600 mt-2">Team Members</p>
+                <p className="text-gray-600 mt-2">Technologies</p>
               </div>
               <div>
                 <h3 className="text-5xl font-bold text-primary-600">0</h3>
@@ -61,7 +61,7 @@ const About = () => {
             </div>
 
             <p className="text-gray-600 mt-4">
-              As a brand new startup, we're passionate about innovation and ready to take on our first clients. Our small but dedicated team brings fresh perspectives and cutting-edge expertise to every project we undertake.
+              As a brand new startup, we're passionate about innovation and ready to take on our first clients. We bring fresh perspectives and cutting-edge expertise to every project we undertake.
             </p>
 
             <motion.button

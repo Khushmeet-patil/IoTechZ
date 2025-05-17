@@ -124,9 +124,9 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "Email Us",
-      details: "www.iotechz.com",
+      details: "khushmeetpatil@gmail.com",
       action: "Email us",
-      link: "mailto: khushmeetpatil@gmail.com",
+      link: "mailto:khushmeetpatil@gmail.com",
     },
     {
       icon: <MapPin size={24} />,

@@ -5,25 +5,25 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: 'Khushmeet Patil',
-    role: 'Founder, IoTechZ',
-    image: '/images/founder.jpg',
+    name: 'Vision Statement',
+    role: 'Our Mission',
+    image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     quote: 'Our vision is to create innovative solutions that bridge the gap between software and hardware, making technology more accessible and useful for businesses of all sizes.',
     rating: 5,
   },
   {
     id: 2,
-    name: 'Ved Patil',
-    role: 'CTO, IoTechZ',
-    image: '/images/ved_cto.jpg',
+    name: 'Technology Focus',
+    role: 'Our Approach',
+    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     quote: 'We\'re building IoTechZ to help businesses leverage cutting-edge technology without the complexity. Our approach combines technical expertise with practical solutions.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Keya Sheth',
-    role: 'CMO, IoTechZ',
-    image: '/images/keya_cmo.jpg',
+    name: 'Design Philosophy',
+    role: 'Our Commitment',
+    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     quote: 'Great technology deserves great design. At IoTechZ, we\'re committed to creating products and services that are not just powerful, but also intuitive and enjoyable to use.',
     rating: 5,
   },
@@ -87,7 +87,7 @@ const Testimonials = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Vision</h2>
           <p className="text-gray-600 text-lg">
-            As we prepare to launch, here's what drives our team and shapes our approach to technology.
+            As we prepare to launch, here's what drives our company and shapes our approach to technology.
           </p>
         </motion.div>
 

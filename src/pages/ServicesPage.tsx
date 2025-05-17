@@ -261,7 +261,8 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="py-24">
+      {/* Remove the Digital Marketing section */}
+      {/* <section className="py-24">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -291,7 +292,6 @@ const ServicesPage = () => {
                 Our digital marketing strategies are data-driven and results-focused, helping you connect with your audience and achieve your business goals.
               </p>
               <div className="space-y-4">
-
                 <div className="flex items-start">
                   <div className="bg-primary-100 p-2 rounded-full mr-4">
                     <Check size={20} className="text-primary-600" />
@@ -323,7 +323,7 @@ const ServicesPage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-24 bg-gray-50">
         <div className="container-custom">
@@ -389,6 +389,78 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      <section className="py-24">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="AI Integration"
+                className="rounded-lg shadow-xl w-full"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold">AI Integration</h2>
+              <p className="text-gray-600 text-lg">
+                Harness the power of artificial intelligence to transform your business operations and customer experiences.
+              </p>
+              <p className="text-gray-600">
+                Our AI integration services help businesses implement cutting-edge artificial intelligence solutions that drive innovation, automate processes, and deliver personalized experiences.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Machine Learning Models</h3>
+                    <p className="text-gray-600">Custom ML models trained on your data to solve specific business problems.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Natural Language Processing</h3>
+                    <p className="text-gray-600">Implement chatbots, sentiment analysis, and text processing capabilities.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Computer Vision</h3>
+                    <p className="text-gray-600">Image recognition and processing for automated visual analysis.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-primary-100 p-2 rounded-full mr-4">
+                    <Check size={20} className="text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Predictive Analytics</h3>
+                    <p className="text-gray-600">Forecast trends and behaviors to make data-driven business decisions.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
       <CTA />
     </motion.div>
@@ -414,3 +486,4 @@ const Check = ({ size, className }: { size: number; className?: string }) => (
     <polyline points="20 6 9 17 4 12" />
   </svg>
 );
+

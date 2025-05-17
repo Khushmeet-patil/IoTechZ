@@ -100,7 +100,14 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
-              {['Digital Marketing', 'UI/UX Design', 'Web Development', 'Branding', 'IoT Solutions', 'Automation'].map((item) => (
+              {[
+                /* Remove 'Digital Marketing' from this array */
+                'UI/UX Design',
+                'Web Development',
+                'Branding',
+                'IoT Solutions',
+                'Automation'
+              ].map((item) => (
                 <li key={item}>
                   <Link to="/services" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ChevronRight size={16} className="mr-1" />
