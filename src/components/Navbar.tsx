@@ -53,13 +53,18 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container-custom mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center space-x-2">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-2xl font-display font-bold"
+            className="flex items-center"
           >
-            <span className={`${scrolled ? 'text-primary-700' : 'text-white'}`}>
+            <img 
+              src="/images/logo.svg" 
+              alt="IoTechZ Logo" 
+              className="h-8 md:h-10"
+            />
+            <span className={`text-2xl font-display font-bold ml-2 ${scrolled ? 'text-primary-700' : 'text-white'}`}>
               IoTechZ
             </span>
             <span className="text-accent-600">.</span>
@@ -100,22 +105,22 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <motion.div
-        className={`absolute top-full left-0 right-0 bg-white shadow-lg md:hidden ${
+        className={`fixed inset-0 bg-white md:hidden ${
           isOpen ? 'block' : 'hidden'
         }`}
         initial={{ height: 0, opacity: 0 }}
         animate={{
-          height: isOpen ? 'auto' : 0,
+          height: isOpen ? '100vh' : 0,
           opacity: isOpen ? 1 : 0
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="container-custom mx-auto py-4 flex flex-col space-y-4">
+        <div className="container-custom mx-auto py-20 px-4 flex flex-col space-y-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-gray-700 font-medium py-2 ${
+              className={`text-lg font-medium py-2 ${
                 location.pathname === link.path
                   ? 'text-accent-600'
                   : 'text-gray-700'
