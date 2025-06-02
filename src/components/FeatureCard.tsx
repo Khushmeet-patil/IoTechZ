@@ -16,25 +16,25 @@ const FeatureCard = ({ icon, title, description, delay = 0, image }: FeatureCard
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+      className="responsive-card"
     >
       {image ? (
-        <div className="mb-5 overflow-hidden rounded-lg">
+        <div className="mb-4 md:mb-5 overflow-hidden rounded-lg">
           <img
             src={image}
             alt={title}
-            className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+            className="responsive-image h-40 sm:h-48 md:h-56 transition-transform duration-500 hover:scale-110"
           />
         </div>
       ) : null}
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary-100 text-primary-600 mb-5"
+        className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-primary-100 text-primary-600 mb-4 md:mb-5"
       >
         {icon}
       </motion.div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{title}</h3>
+      <p className="text-sm md:text-base text-gray-600">{description}</p>
     </motion.div>
   );
 };

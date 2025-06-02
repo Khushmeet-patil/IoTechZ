@@ -22,7 +22,7 @@ const Hero = ({
 }: HeroProps) => {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center"
+      className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -34,19 +34,19 @@ const Hero = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center text-white"
+          className="max-w-4xl mx-auto text-center text-white px-4 sm:px-6 lg:px-8"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{title}</h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-8">{subtitle}</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">{title}</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8">{subtitle}</p>
           
           {(ctaText || secondaryCtaText) && (
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               {ctaText && ctaLink && (
                 <Link to={ctaLink}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                    className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-medium transition-colors"
                   >
                     {ctaText}
                   </motion.button>
@@ -58,7 +58,7 @@ const Hero = ({
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                    className="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white/10 text-white px-6 py-3 rounded-full font-medium transition-colors"
                   >
                     {secondaryCtaText}
                   </motion.button>

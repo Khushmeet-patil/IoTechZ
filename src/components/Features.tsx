@@ -32,22 +32,22 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="section-padding bg-gray-50">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base md:text-lg">
             We offer a comprehensive suite of services to help your business succeed in the digital landscape.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

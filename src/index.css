@@ -31,27 +31,76 @@
   @apply border-gray-200;
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
-  @apply bg-white text-gray-900;
+  @apply bg-white text-gray-900 min-h-screen;
   font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Responsive Typography */
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+h3 {
+  @apply text-xl md:text-2xl font-semibold;
+}
+
+p {
+  @apply text-base md:text-lg;
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
   
   .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+    @apply inline-flex items-center justify-center rounded-md text-sm md:text-base font-medium transition-colors 
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
     disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
   }
   
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 px-6 py-3 rounded-full;
+    @apply bg-primary-600 text-white hover:bg-primary-700 px-4 md:px-6 py-2 md:py-3 rounded-full;
   }
   
   .btn-secondary {
-    @apply bg-white text-primary-700 border border-primary-600 hover:bg-gray-50 px-6 py-3 rounded-full;
+    @apply bg-white text-primary-700 border border-primary-600 hover:bg-gray-50 px-4 md:px-6 py-2 md:py-3 rounded-full;
+  }
+
+  /* Responsive Grid Layouts */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8;
+  }
+
+  /* Responsive Spacing */
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+  .section-margin {
+    @apply my-8 md:my-12 lg:my-16;
+  }
+
+  /* Responsive Images */
+  .responsive-image {
+    @apply w-full h-auto object-cover;
+  }
+
+  /* Responsive Cards */
+  .responsive-card {
+    @apply p-4 md:p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow;
   }
 }

@@ -162,7 +162,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {/* Contact Info Cards */}
           {contactInfo.map((info, index) => (
             <motion.div
@@ -171,16 +171,16 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-xl shadow-lg text-center"
+              className="responsive-card text-center"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-5 mx-auto">
+              <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary-100 text-primary-600 mb-4 md:mb-5 mx-auto">
                 {info.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{info.title}</h3>
-              <p className="text-gray-600 mb-4">{info.details}</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-2">{info.title}</h3>
+              <p className="text-sm md:text-base text-gray-600 mb-4">{info.details}</p>
               <a
                 href={info.link}
-                className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center"
+                className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center text-sm md:text-base"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -196,9 +196,9 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 bg-white p-8 md:p-12 rounded-xl shadow-lg"
+          className="mt-8 md:mt-12 lg:mt-16 responsive-card"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center">
+          <h3 className="text-xl md:text-2xl font-bold mb-6 text-center">
             Send Us a Message
           </h3>
 
@@ -206,7 +206,7 @@ const Contact = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg text-center"
+              className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg text-center text-sm md:text-base"
             >
               Thank you for your message! Your email has been sent successfully
               to our team. We'll get back to you soon.
@@ -217,7 +217,7 @@ const Contact = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg text-center"
+              className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg text-center text-sm md:text-base"
             >
               There was an error sending your email. The site administrator
               needs to properly configure EmailJS. Please contact us directly at

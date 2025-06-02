@@ -19,6 +19,24 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Set IoTechZ as title and prevent other components from changing it
+  useEffect(() => {
+    document.title = 'IoTechZ';
+    // Override the title setter to prevent changes
+    const originalTitle = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+    Object.defineProperty(document, 'title', {
+      get: () => 'IoTechZ',
+      set: () => {},
+      configurable: true
+    });
+    return () => {
+      // Restore original title setter when component unmounts
+      if (originalTitle) {
+        Object.defineProperty(document, 'title', originalTitle);
+      }
+    };
+  }, []);
+
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="" element={<Layout />}>
