@@ -10,8 +10,6 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { href: 'https://facebook.com', icon: <Facebook size={18} /> },
-    { href: 'https://twitter.com', icon: <Twitter size={18} /> },
     { href: 'https://www.instagram.com/iotechz?igsh=cWJsNHk3N3N5bWc0', icon: <Instagram size={18} /> },
     { href: 'https://www.linkedin.com/company/iotechz/', icon: <Linkedin size={18} /> },
   ];
@@ -106,15 +104,15 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-sm md:text-base text-gray-400">
                 <Mail size={16} className="inline mr-2" />
-                contact@iotechz.com
+                iotechz.services@gmail.com
               </li>
               <li className="text-sm md:text-base text-gray-400">
                 <Phone size={16} className="inline mr-2" />
-                +1 (555) 123-4567
+                +91 7990358824
               </li>
               <li className="text-sm md:text-base text-gray-400">
                 <MapPin size={16} className="inline mr-2" />
-                123 Tech Street, Silicon Valley, CA
+                Plot No. 1801/1, G.I.D.C. , Vithal UdhyogNagar-388121, Anand(Guj)
               </li>
             </ul>
           </motion.div>
