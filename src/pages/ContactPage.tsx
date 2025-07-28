@@ -18,7 +18,7 @@ const ContactPage = () => {
       <Hero 
         title="Get In Touch"
         subtitle="Have a project in mind or want to learn more about our services? We'd love to hear from you!"
-        backgroundImage="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        backgroundImage="/images/contact-us.jpeg"
       />
       <Contact />
     </motion.div>

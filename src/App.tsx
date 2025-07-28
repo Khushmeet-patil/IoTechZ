@@ -7,9 +7,8 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
 import ContactPage from './pages/ContactPage';
-import ProjectsPage from './pages/ProjectsPage';
-import ProjectDetailPage from './pages/ProjectDetailPage';
 import AllProjectsPage from './pages/AllProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import FAQPage from './pages/FAQPage';
 
 function App() {
@@ -43,8 +42,8 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="services" element={<ServicesPage />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="projects/:id" element={<ProjectDetailPage />} />
+        <Route path="projects" element={<AllProjectsPage />} />
+        <Route path="projects/:projectId" element={<ProjectDetailPage />} />
         <Route path="all-projects" element={<AllProjectsPage />} />
         {/* Pricing route temporarily disabled */}
         {/* <Route path="pricing" element={<PricingPage />} /> */}
