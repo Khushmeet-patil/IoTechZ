@@ -45,9 +45,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-      }`}
+      className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -64,7 +62,7 @@ const Navbar = () => {
               alt="IoTechZ Logo" 
               className="h-8 md:h-10"
             />
-            <span className={`text-2xl font-display font-bold ml-2 ${scrolled ? 'text-primary-700' : 'text-white'}`}>
+            <span className="text-2xl font-display font-bold ml-2 text-primary-700">
               IoTechZ
             </span>
             <span className="text-accent-600">.</span>
@@ -77,9 +75,7 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`relative font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
-              } hover:text-accent-500 transition-colors`}
+              className="relative font-medium text-sm text-gray-700 hover:text-accent-500 transition-colors"
             >
               {link.label}
               {location.pathname === link.path && (
