@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-2"
+      className={`fixed w-full z-50 transition-all duration-300 py-2 ${scrolled ? 'bg-white shadow-md' : 'bg-black/0 backdrop-blur-sm'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -62,10 +62,10 @@ const Navbar = () => {
               alt="IoTechZ Logo" 
               className="h-8 md:h-10"
             />
-            <span className="text-2xl font-display font-bold ml-2 text-primary-700">
+            <span className={`text-2xl font-display font-bold ${scrolled ? 'text-primary-700' : 'text-white'}`}>
               IoTechZ
             </span>
-            <span className="text-accent-600">.</span>
+            <span className={`${scrolled ? 'text-accent-600' : 'text-pink-500'}`}>.</span>
           </motion.div>
         </Link>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className="relative font-medium text-sm text-gray-700 hover:text-accent-500 transition-colors"
+              className={`relative font-medium text-sm ${scrolled ? 'text-gray-700' : 'text-white'} hover:text-accent-500 transition-colors`}
             >
               {link.label}
               {location.pathname === link.path && (
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden text-primary-700"
+          className={`md:hidden ${scrolled ? 'text-primary-700' : 'text-white'}`}
           onClick={toggleMenu}
           whileTap={{ scale: 0.9 }}
         >
@@ -101,9 +101,9 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <motion.div
-        className={`fixed inset-0 bg-white md:hidden ${
+        className={`fixed inset-0 md:hidden ${
           isOpen ? 'block' : 'hidden'
-        }`}
+        } ${scrolled ? 'bg-white' : 'bg-black/0 backdrop-blur-sm'}`}
         initial={{ height: 0, opacity: 0 }}
         animate={{
           height: isOpen ? '100vh' : 0,
@@ -119,7 +119,7 @@ const Navbar = () => {
               className={`text-lg font-medium py-2 ${
                 location.pathname === link.path
                   ? 'text-accent-600'
-                  : 'text-gray-700'
+                  : scrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
               {link.label}
