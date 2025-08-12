@@ -117,12 +117,6 @@ const Footer = () => {
             </ul>
           </motion.div>
         </div>
-
-        <div className="border-t border-gray-800 mt-8 md:mt-12 pt-8 md:pt-12 text-center">
-          <p className="text-sm md:text-base text-gray-400">
-            © {new Date().getFullYear()} IoTechZ. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

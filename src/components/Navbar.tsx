@@ -95,15 +95,15 @@ const Navbar = () => {
           onClick={toggleMenu}
           whileTap={{ scale: 0.9 }}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <Menu size={24} />
         </motion.button>
       </div>
 
       {/* Mobile Navigation */}
       <motion.div
-        className={`fixed inset-0 md:hidden ${
+        className={`fixed inset-0 md:hidden bg-white/95 backdrop-blur-lg ${
           isOpen ? 'block' : 'hidden'
-        } ${scrolled ? 'bg-white' : 'bg-black/0 backdrop-blur-sm'}`}
+        }`}
         initial={{ height: 0, opacity: 0 }}
         animate={{
           height: isOpen ? '100vh' : 0,
@@ -111,16 +111,26 @@ const Navbar = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="container-custom mx-auto py-20 px-4 flex flex-col space-y-6">
+        <div className="absolute top-4 right-4">
+          <motion.button
+            className="text-gray-800"
+            onClick={toggleMenu}
+            whileTap={{ scale: 0.9 }}
+          >
+            <X size={28} />
+          </motion.button>
+        </div>
+        <div className="container-custom mx-auto pt-16 pb-8 px-4 flex flex-col items-center space-y-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-lg font-medium py-2 ${
+              className={`text-2xl font-semibold py-3 w-full text-center transition-colors ${
                 location.pathname === link.path
                   ? 'text-accent-600'
-                  : scrolled ? 'text-gray-700' : 'text-white'
+                  : 'text-gray-800 hover:text-accent-500'
               }`}
+              onClick={() => setIsOpen(false)}
             >
               {link.label}
             </Link>
