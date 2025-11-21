@@ -22,7 +22,7 @@ const Hero = ({
 }: HeroProps) => {
   return (
     <section
-      className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center pt-16 md:pt-20"
+      className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center pt-16 md:pt-20 overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -43,7 +43,7 @@ const Hero = ({
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
-          
+
           {(ctaText || secondaryCtaText) && (
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               {ctaText && ctaLink && (
@@ -57,7 +57,7 @@ const Hero = ({
                   </motion.button>
                 </Link>
               )}
-              
+
               {secondaryCtaText && secondaryCtaLink && (
                 <Link to={secondaryCtaLink} className="w-full sm:w-auto">
                   <motion.button
